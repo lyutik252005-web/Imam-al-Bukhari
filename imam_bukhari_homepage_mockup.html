@@ -1,0 +1,285 @@
+
+<h2 class="sr-only">Homepage mockup for the Imam al-Bukhari Complex digital platform</h2>
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  .page { font-family: var(--font-sans); background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 52px; border-bottom: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); }
+  .nav-logo { display: flex; align-items: center; gap: 8px; }
+  .nav-logo-mark { width: 28px; height: 28px; background: #1D9E75; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+  .nav-logo-mark span { color: #fff; font-size: 13px; font-weight: 500; }
+  .nav-logo-text { font-size: 13px; font-weight: 500; color: var(--color-text-primary); }
+  .nav-links { display: flex; align-items: center; gap: 20px; }
+  .nav-link { font-size: 12px; color: var(--color-text-secondary); cursor: pointer; }
+  .nav-link:hover { color: var(--color-text-primary); }
+  .nav-actions { display: flex; align-items: center; gap: 8px; }
+  .lang-btn { font-size: 11px; padding: 4px 8px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); color: var(--color-text-secondary); cursor: pointer; background: transparent; }
+  .cta-btn { font-size: 12px; padding: 6px 14px; background: #1D9E75; color: #fff; border: none; border-radius: var(--border-radius-md); cursor: pointer; font-weight: 500; }
+
+  .hero { background: #0F3D2E; padding: 52px 32px 44px; position: relative; overflow: hidden; }
+  .hero-geo { position: absolute; top: 0; right: 0; width: 220px; height: 100%; opacity: 0.07; }
+  .hero-geo-inner { width: 100%; height: 100%; background: repeating-linear-gradient(60deg, #fff 0px, #fff 1px, transparent 1px, transparent 20px), repeating-linear-gradient(-60deg, #fff 0px, #fff 1px, transparent 1px, transparent 20px); }
+  .hero-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(29,158,117,0.25); border: 0.5px solid rgba(29,158,117,0.5); border-radius: 20px; padding: 4px 12px; margin-bottom: 20px; }
+  .hero-badge-dot { width: 6px; height: 6px; background: #5DCAA5; border-radius: 50%; }
+  .hero-badge-text { font-size: 11px; color: #9FE1CB; font-weight: 500; }
+  .hero-title { font-size: 26px; font-weight: 500; color: #fff; line-height: 1.3; margin-bottom: 8px; }
+  .hero-title-ar { font-size: 18px; color: #9FE1CB; margin-bottom: 16px; direction: rtl; font-family: var(--font-serif); }
+  .hero-sub { font-size: 13px; color: #9FE1CB; line-height: 1.7; max-width: 420px; margin-bottom: 28px; }
+  .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+  .hero-btn-primary { font-size: 13px; padding: 9px 20px; background: #1D9E75; color: #fff; border: none; border-radius: var(--border-radius-md); cursor: pointer; font-weight: 500; }
+  .hero-btn-secondary { font-size: 13px; padding: 9px 20px; background: transparent; color: #9FE1CB; border: 0.5px solid rgba(255,255,255,0.2); border-radius: var(--border-radius-md); cursor: pointer; }
+  .hero-stats { display: flex; gap: 32px; }
+  .hero-stat-num { font-size: 20px; font-weight: 500; color: #fff; }
+  .hero-stat-lbl { font-size: 11px; color: #5DCAA5; margin-top: 2px; }
+
+  .prayer-bar { background: #085041; padding: 10px 24px; display: flex; align-items: center; gap: 0; overflow-x: auto; }
+  .prayer-item { display: flex; flex-direction: column; align-items: center; padding: 0 16px; border-right: 0.5px solid rgba(255,255,255,0.1); }
+  .prayer-item:last-child { border-right: none; }
+  .prayer-name { font-size: 10px; color: #5DCAA5; }
+  .prayer-time { font-size: 13px; font-weight: 500; color: #fff; margin-top: 1px; }
+  .prayer-active .prayer-name { color: #9FE1CB; }
+  .prayer-active .prayer-time { color: #5DCAA5; }
+  .prayer-bar-label { font-size: 10px; color: #5DCAA5; margin-right: 16px; white-space: nowrap; display: flex; align-items: center; gap: 4px; }
+
+  .section { padding: 36px 24px; }
+  .section-title { font-size: 17px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .section-sub { font-size: 12px; color: var(--color-text-secondary); margin-bottom: 20px; }
+
+  .features { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+  .feature-card { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 16px; cursor: pointer; transition: background 0.15s; }
+  .feature-card:hover { background: var(--color-background-tertiary); }
+  .feature-icon { width: 36px; height: 36px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; margin-bottom: 10px; }
+  .feature-name { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .feature-desc { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+
+  .divider { height: 0.5px; background: var(--color-border-tertiary); margin: 0 24px; }
+
+  .events-row { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+  .event-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px; }
+  .event-date { font-size: 10px; color: #1D9E75; font-weight: 500; margin-bottom: 4px; }
+  .event-title { font-size: 13px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+  .event-meta { font-size: 11px; color: var(--color-text-secondary); display: flex; align-items: center; gap: 4px; }
+
+  .hadith-box { background: var(--color-background-secondary); border-radius: var(--border-radius-lg); padding: 20px 24px; border-left: 3px solid #1D9E75; border-radius: 0; }
+  .hadith-ar { font-size: 18px; color: var(--color-text-primary); direction: rtl; text-align: right; line-height: 1.8; margin-bottom: 12px; font-family: var(--font-serif); }
+  .hadith-en { font-size: 12px; color: var(--color-text-secondary); line-height: 1.7; margin-bottom: 10px; font-style: italic; }
+  .hadith-ref { font-size: 11px; color: #1D9E75; font-weight: 500; }
+  .hadith-search { display: flex; gap: 8px; margin-bottom: 16px; }
+  .hadith-search input { flex: 1; font-size: 13px; padding: 8px 12px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: var(--color-background-primary); color: var(--color-text-primary); }
+
+  .tour-banner { background: #0F3D2E; border-radius: var(--border-radius-lg); padding: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+  .tour-banner-left { flex: 1; }
+  .tour-banner-title { font-size: 15px; font-weight: 500; color: #fff; margin-bottom: 6px; }
+  .tour-banner-sub { font-size: 12px; color: #9FE1CB; line-height: 1.5; }
+  .tour-btn { font-size: 12px; padding: 9px 18px; background: #1D9E75; color: #fff; border: none; border-radius: var(--border-radius-md); cursor: pointer; font-weight: 500; white-space: nowrap; }
+  .tour-preview { width: 100px; height: 70px; background: #085041; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+  .donate-row { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+  .donate-card { border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); padding: 14px; text-align: center; cursor: pointer; transition: border-color 0.15s; }
+  .donate-card:hover { border-color: #1D9E75; }
+  .donate-type { font-size: 11px; color: var(--color-text-secondary); margin-bottom: 4px; }
+  .donate-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 8px; }
+  .donate-btn-sm { font-size: 11px; padding: 5px 12px; background: #E1F5EE; color: #085041; border: none; border-radius: var(--border-radius-md); cursor: pointer; font-weight: 500; }
+
+  .footer-bar { background: var(--color-background-secondary); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; border-top: 0.5px solid var(--color-border-tertiary); }
+  .footer-copy { font-size: 11px; color: var(--color-text-tertiary); }
+  .footer-links { display: flex; gap: 16px; }
+  .footer-link { font-size: 11px; color: var(--color-text-secondary); }
+</style>
+
+<div class="page">
+
+  <nav class="nav">
+    <div class="nav-logo">
+      <div class="nav-logo-mark"><span>ب</span></div>
+      <span class="nav-logo-text">Imam al-Bukhari Complex</span>
+    </div>
+    <div class="nav-links">
+      <span class="nav-link">Visit</span>
+      <span class="nav-link">Learn</span>
+      <span class="nav-link">Virtual tour</span>
+      <span class="nav-link">Events</span>
+      <span class="nav-link">Donate</span>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-btn">AR · УЗ · EN</button>
+      <button class="cta-btn">Plan your visit</button>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-geo"><div class="hero-geo-inner"></div></div>
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span class="hero-badge-text">Official digital platform — Samarkand, Uzbekistan</span>
+    </div>
+    <div class="hero-title">The legacy of Imam al-Bukhari,<br>preserved for the world</div>
+    <div class="hero-title-ar">مجمع الإمام البخاري</div>
+    <div class="hero-sub">Explore the mausoleum, mosque and madrasa of the greatest Hadith scholar in Islamic history. Learn, visit, and connect — in Arabic, Uzbek, English and Russian.</div>
+    <div class="hero-btns">
+      <button class="hero-btn-primary">Explore the complex</button>
+      <button class="hero-btn-secondary">
+        <i class="ti ti-360-view" style="font-size:14px; margin-right:4px; vertical-align:-2px;" aria-hidden="true"></i>
+        Virtual tour
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">194 AH</div>
+        <div class="hero-stat-lbl">Year of birth</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">7,275</div>
+        <div class="hero-stat-lbl">Hadith in Sahih al-Bukhari</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">3M+</div>
+        <div class="hero-stat-lbl">Annual visitors</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prayer-bar">
+    <div class="prayer-bar-label">
+      <i class="ti ti-clock" style="font-size:12px;" aria-hidden="true"></i>
+      Prayer times · Samarkand
+    </div>
+    <div class="prayer-item"><div class="prayer-name">Fajr</div><div class="prayer-time">04:12</div></div>
+    <div class="prayer-item"><div class="prayer-name">Dhuhr</div><div class="prayer-time">13:05</div></div>
+    <div class="prayer-item prayer-active"><div class="prayer-name">Asr ·now</div><div class="prayer-time">16:48</div></div>
+    <div class="prayer-item"><div class="prayer-name">Maghrib</div><div class="prayer-time">20:31</div></div>
+    <div class="prayer-item"><div class="prayer-name">Isha</div><div class="prayer-time">22:05</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Discover the complex</div>
+    <div class="section-sub">Everything you need — whether you are visiting in person or from anywhere in the world</div>
+    <div class="features">
+      <div class="feature-card" onclick="sendPrompt('Tell me more about the visitor information section')">
+        <div class="feature-icon" style="background:#E1F5EE;"><i class="ti ti-map-2" style="font-size:18px; color:#0F6E56;" aria-hidden="true"></i></div>
+        <div class="feature-name">Plan your visit</div>
+        <div class="feature-desc">Opening hours, directions, site map, and accessibility guide</div>
+      </div>
+      <div class="feature-card" onclick="sendPrompt('Tell me more about the learning hub')">
+        <div class="feature-icon" style="background:#EEEDFE;"><i class="ti ti-book-open" style="font-size:18px; color:#534AB7;" aria-hidden="true"></i></div>
+        <div class="feature-name">Hadith learning hub</div>
+        <div class="feature-desc">Search and study Sahih al-Bukhari with audio and commentary</div>
+      </div>
+      <div class="feature-card" onclick="sendPrompt('Tell me more about the virtual tour')">
+        <div class="feature-icon" style="background:#FAEEDA;"><i class="ti ti-view-360" style="font-size:18px; color:#854F0B;" aria-hidden="true"></i></div>
+        <div class="feature-name">360° virtual tour</div>
+        <div class="feature-desc">Immersive panoramic experience with guided audio narration</div>
+      </div>
+      <div class="feature-card" onclick="sendPrompt('Tell me more about the events section')">
+        <div class="feature-icon" style="background:#FAECE7;"><i class="ti ti-calendar-event" style="font-size:18px; color:#993C1D;" aria-hidden="true"></i></div>
+        <div class="feature-name">Events & programmes</div>
+        <div class="feature-desc">Islamic lectures, Quran recitations, and live conferences</div>
+      </div>
+      <div class="feature-card" onclick="sendPrompt('Tell me more about the biography section')">
+        <div class="feature-icon" style="background:#E1F5EE;"><i class="ti ti-user-star" style="font-size:18px; color:#0F6E56;" aria-hidden="true"></i></div>
+        <div class="feature-name">Life of Imam al-Bukhari</div>
+        <div class="feature-desc">Biography, scholarship, and the story of Sahih al-Bukhari</div>
+      </div>
+      <div class="feature-card" onclick="sendPrompt('Tell me more about the donation portal')">
+        <div class="feature-icon" style="background:#EAF3DE;"><i class="ti ti-heart-handshake" style="font-size:18px; color:#3B6D11;" aria-hidden="true"></i></div>
+        <div class="feature-name">Support the complex</div>
+        <div class="feature-desc">Waqf endowment, Zakat, and charitable giving portal</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title">Hadith of the day</div>
+    <div class="section-sub">From Sahih al-Bukhari — updated daily</div>
+    <div class="hadith-search">
+      <input type="text" placeholder="Search Sahih al-Bukhari in Arabic or English..." />
+      <button class="cta-btn">Search</button>
+    </div>
+    <div class="hadith-box">
+      <div class="hadith-ar">إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى</div>
+      <div class="hadith-en">"Actions are judged by intentions, and every person will be rewarded according to their intention."</div>
+      <div class="hadith-ref">Sahih al-Bukhari · Book 1, Hadith 1 · Narrated by Umar ibn al-Khattab (ra)</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title">Upcoming events</div>
+    <div class="section-sub">Register online — in person and livestreamed</div>
+    <div class="events-row">
+      <div class="event-card">
+        <div class="event-date">15 Dhul Hijjah · 28 June 2026</div>
+        <div class="event-title">International Hadith conference</div>
+        <div class="event-meta"><i class="ti ti-map-pin" style="font-size:12px;" aria-hidden="true"></i> Complex main hall + livestream</div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Every Friday · 13:30</div>
+        <div class="event-title">Weekly Quran recitation circle</div>
+        <div class="event-meta"><i class="ti ti-map-pin" style="font-size:12px;" aria-hidden="true"></i> Mosque courtyard</div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">1 Muharram · 19 July 2026</div>
+        <div class="event-title">Islamic New Year lecture series</div>
+        <div class="event-meta"><i class="ti ti-device-tv" style="font-size:12px;" aria-hidden="true"></i> Online only</div>
+      </div>
+      <div class="event-card">
+        <div class="event-date">Ongoing</div>
+        <div class="event-title">Hadith sciences course — Level 1</div>
+        <div class="event-meta"><i class="ti ti-school" style="font-size:12px;" aria-hidden="true"></i> Self-paced · Certificate awarded</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="tour-banner">
+      <div class="tour-banner-left">
+        <div class="tour-banner-title">Experience the complex from anywhere in the world</div>
+        <div class="tour-banner-sub">Our 360° virtual tour lets you walk through the mausoleum, mosque and gardens — with audio narration in four languages.</div>
+      </div>
+      <div class="tour-preview">
+        <i class="ti ti-view-360" style="font-size:28px; color:#5DCAA5;" aria-hidden="true"></i>
+      </div>
+      <button class="tour-btn">Start virtual tour</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="section">
+    <div class="section-title">Support the legacy</div>
+    <div class="section-sub">Every contribution preserves and shares the knowledge of Imam al-Bukhari</div>
+    <div class="donate-row">
+      <div class="donate-card">
+        <div class="donate-type">Ongoing charity</div>
+        <div class="donate-name">Waqf endowment</div>
+        <button class="donate-btn-sm">Give Waqf</button>
+      </div>
+      <div class="donate-card">
+        <div class="donate-type">Obligatory giving</div>
+        <div class="donate-name">Zakat</div>
+        <button class="donate-btn-sm">Calculate & give</button>
+      </div>
+      <div class="donate-card">
+        <div class="donate-type">General donation</div>
+        <div class="donate-name">Support the complex</div>
+        <button class="donate-btn-sm">Donate</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span class="footer-copy">© 2026 Imam al-Bukhari Complex Digital Platform</span>
+    <div class="footer-links">
+      <span class="footer-link">Privacy</span>
+      <span class="footer-link">Contact</span>
+      <span class="footer-link">Arabic · Uzbek · English · Russian</span>
+    </div>
+  </div>
+
+</div>
